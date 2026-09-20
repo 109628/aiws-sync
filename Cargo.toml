@@ -1,0 +1,13 @@
+[package]
+name = "ai-workspace-sync"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "aiws"
+path = "src/main.rs"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+directories = "5"
+regex = "1"
