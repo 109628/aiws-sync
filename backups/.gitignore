@@ -1,0 +1,10 @@
+# Never commit secrets or local runtime data
+.env
+*.key
+*.pem
+*token*
+*credential*
+*auth*
+history.jsonl
+cache/
+sessions/

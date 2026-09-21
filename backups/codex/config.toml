@@ -1,0 +1,289 @@
+approvals_reviewer = "user"
+service_tier = "fast"
+model = "gpt-5.6-terra"
+model_reasoning_effort = "medium"
+
+notify = [ "C:\\Users\\yethu.krishnan\\AppData\\Local\\OpenAI\\Codex\\runtimes\\cua_node\\415ffebf3d576e9b\\bin\\node_modules\\@oai\\sky\\bin\\windows\\codex-computer-use.exe", "turn-ended" ]
+[mcp_servers.databricks-mcp]
+type = "http"
+url = "https://adb-7405609401284196.16.azuredatabricks.net/api/2.0/mcp/sql"
+
+[mcp_servers.databricks-mcp.headers]
+Authorization = "****"
+
+[mcp_servers.excel]
+command = "cmd"
+args = [
+    "/c",
+    "npx",
+    "--yes",
+    "@negokaz/excel-mcp-server",
+]
+
+[mcp_servers.excel.env]
+EXCEL_MCP_PAGING_CELLS_LIMIT = "4000"
+
+[mcp_servers.excel.tools.excel_describe_sheets]
+approval_mode = "approve"
+
+[mcp_servers.excel.tools.excel_read_sheet]
+approval_mode = "approve"
+
+[mcp_servers.excel.tools.excel_screen_capture]
+approval_mode = "approve"
+
+[mcp_servers.mcp-clickhouse]
+command = 'C:\Users\yethu.krishnan\.local\bin\mcp-clickhouse.exe'
+args = []
+
+[mcp_servers.mcp-clickhouse.env]
+CLICKHOUSE_HOST = "20.15.202.96"
+CLICKHOUSE_PORT = "8123"
+CLICKHOUSE_USER = "clickhouse"
+CLICKHOUSE_PASSWORD = "****"
+CLICKHOUSE_SECURE = "false"
+CLICKHOUSE_VERIFY = "false"
+CLICKHOUSE_CONNECT_TIMEOUT = "30"
+CLICKHOUSE_SEND_RECEIVE_TIMEOUT = "30"
+
+[mcp_servers.mcp-clickhouse.tools.list_databases]
+approval_mode = "approve"
+
+[mcp_servers.mcp-clickhouse.tools.list_tables]
+approval_mode = "approve"
+
+[mcp_servers.mcp-clickhouse.tools.run_query]
+approval_mode = "approve"
+
+[mcp_servers.langfuse]
+type = "http"
+url = "https://langfuse-aiml.provana.com/api/public/mcp"
+
+[mcp_servers.langfuse.headers]
+Authorization = "**** cGstbGYtNTM5MTg4ZmYtZDc4Yy00MjM2LWFmNjktMWJhNWMwOThhNTU2OnNrLWxmLWU2MGZjMzhkLWE3ZWItNDg3Mi04OTQ5LWNjMDQxYWU4N2U0Yw=="
+
+[mcp_servers.azure_devops]
+command = "npx"
+args = [
+    "-y",
+    "@azure-devops/mcp",
+    "provanadev",
+    "-d",
+    "core",
+    "repositories",
+    "work-items",
+    "pipelines",
+]
+
+[mcp_servers.databricks]
+command = "databricks"
+args = [
+    "mcp",
+    "start",
+]
+
+[mcp_servers.drawio]
+command = "drawio-mcp"
+
+[mcp_servers.drawio.tools.list_pages]
+approval_mode = "approve"
+
+[mcp_servers.drawio.tools.get_page]
+approval_mode = "approve"
+
+[mcp_servers.drawio.tools.open_drawio_xml]
+approval_mode = "approve"
+
+[mcp_servers.drawio.tools.set_page]
+approval_mode = "approve"
+
+[mcp_servers.drawio.tools.search_shapes]
+approval_mode = "approve"
+
+[mcp_servers.bmad]
+command = "node"
+args = ['C:\Users\yethu.krishnan\AppData\Roaming\npm\node_modules\bmad-mcp-server\build\index.js']
+
+[mcp_servers.node_repl]
+args = []
+command = 'C:\Users\yethu.krishnan\AppData\Local\OpenAI\Codex\runtimes\cua_node\415ffebf3d576e9b\bin\node_repl.exe'
+startup_timeout_sec = 120
+
+[mcp_servers.node_repl.env]
+NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
+NODE_REPL_NODE_MODULE_DIRS = 'C:\Users\yethu.krishnan\AppData\Local\OpenAI\Codex\runtimes\cua_node\415ffebf3d576e9b\bin\node_modules'
+NODE_REPL_NODE_PATH = 'C:\Users\yethu.krishnan\AppData\Local\OpenAI\Codex\runtimes\cua_node\415ffebf3d576e9b\bin\node.exe'
+NODE_REPL_TRUSTED_CODE_PATHS = 'C:\Users\yethu.krishnan\.codex;C:\Users\yethu.krishnan\AppData\Local\OpenAI\Codex\runtimes\cua_node\415ffebf3d576e9b\bin\node_modules'
+CODEX_HOME = 'C:\Users\yethu.krishnan\.codex'
+BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
+BROWSER_USE_TINYSKY_ENABLED = "0"
+NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
+NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
+BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
+BROWSER_USE_CODEX_APP_VERSION = "26.825.51511"
+NODE_REPL_TRUSTED_SERVICES = '{"browser":"C:/Users/yethu.krishnan/.codex/plugins/cache/openai-bundled/browser/26.825.51511/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
+SKY_CUA_NATIVE_PIPE = "1"
+SKY_CUA_NATIVE_PIPE_DIRECTORY = '\\.\pipe\codex-computer-use-af5f11e3-6642-4716-9cdd-6da46ed291f5'
+CODEX_CLI_PATH = 'C:\Users\yethu.krishnan\AppData\Local\OpenAI\Codex\bin\b99306303521e97e\codex.exe'
+
+[mcp_servers.fireworks-websearch]
+url = "https://mcp.fireworks.ai/work/mcp"
+
+[mcp_servers.fireworks-websearch.http_headers]
+Authorization = "****"
+
+[mcp_servers.cua_repl]
+command = 'C:\Program Files\WindowsApps\OpenAI.Codex_26.825.6671.0_x64__2p2nqsd0c76g0\app\ChatGPT.exe'
+enabled = false
+
+[projects.'c:\users\yethu.krishnan']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\contactcenterproject']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\contactcenterproject\cc-ai-kms-ingestion-and-chat']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\skill_developement_projeects']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\contactcenterproject\cc-aiservices']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\db_issue']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\contactcenterproject\cc-ai-nudge-service']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\contactcenterproject\cc-livekitagent']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\voiceagents\voice-agents-platform']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\kmsaskpro']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\.claude']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\documents\codex\2026-08-25\vo']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\contactcenterproject\productioncalltranscription']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\contactcenterproject\deepgram-voice-agent-react']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\loadtest']
+trust_level = "trusted"
+
+[projects.'c:\users\yethu.krishnan\onedrive - provana india pvt. ltd\documents\provana_projects\kmsaskprolatest']
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+"gpt-5.6-sol" = 4
+
+[windows]
+sandbox = "unelevated"
+
+[hooks.state]
+
+[hooks.state.'C:\Users\yethu.krishnan\.codex\hooks.json:stop:0:0']
+trusted_hash = "sha256:e801955eef74ca8044e54aed25fb767b75e01a0d2c87ca128e7ef1a44a1f114a"
+
+[hooks.state.'C:\Users\yethu.krishnan\OneDrive - Provana India Pvt. Ltd\Documents\Provana_Projects\ContactCenterProject\.codex\hooks.json:pre_tool_use:0:0']
+trusted_hash = "sha256:4ed7b12f2048676157fd621ef1d46e62132794770594c47efc9ae2f0855e919a"
+
+[hooks.state.'C:\Users\yethu.krishnan\OneDrive - Provana India Pvt. Ltd\Documents\Provana_Projects\ContactCenterProject\.codex\hooks.json:post_tool_use:0:0']
+trusted_hash = "sha256:35f59e85a9a8400d86414103877fe72cb1f9fd1839c8e9f6e6383a4afbe42af6"
+
+[marketplaces.openai-bundled]
+source_type = "local"
+source = '\\?\C:\Users\yethu.krishnan\.codex\.tmp\bundled-marketplaces\openai-bundled'
+
+[marketplaces.openai-primary-runtime]
+source_type = "local"
+source = '\\?\C:\Users\yethu.krishnan\.cache\codex-runtimes\codex-primary-runtime\plugins\openai-primary-runtime'
+
+[marketplaces.claude-plugins-official]
+last_updated = "2026-09-19T06:58:49Z"
+last_revision = "c447c3207a425bc4e2a0d068435f64b0477ae981"
+source_type = "git"
+source = "https://github.com/anthropics/claude-plugins-official.git"
+
+[plugins."codex-app-tools@openai-bundled"]
+enabled = true
+
+[plugins."browser@openai-bundled"]
+enabled = true
+
+[plugins."visualize@openai-bundled"]
+enabled = true
+
+[plugins."documents@openai-primary-runtime"]
+enabled = true
+
+[plugins."pdf@openai-primary-runtime"]
+enabled = true
+
+[plugins."spreadsheets@openai-primary-runtime"]
+enabled = true
+
+[plugins."presentations@openai-primary-runtime"]
+enabled = true
+
+[plugins."template-creator@openai-primary-runtime"]
+enabled = true
+
+[plugins."pyright-lsp@claude-plugins-official"]
+enabled = true
+
+[plugins."sites@openai-bundled"]
+enabled = true
+
+[features]
+js_repl = false
+
+[shell_environment_policy]
+inherit = "core"
+
+[shell_environment_policy.set]
+ANTHROPIC_BASE_URL = "https://provana-bifrost.victoriouspebble-0763ce4e.centralus.azurecontainerapps.io/anthropic"
+ANTHROPIC_DEFAULT_SONNET_MODEL = "fireworks/PFW-GLM-5.2"
+ANTHROPIC_DEFAULT_HAIKU_MODEL = "DeepSeek-V4-Pro"
+CLAUDE_CODE_DISABLE_THINKING = "1"
+MAX_THINKING_TOKENS = "0"
+ANTHROPIC_DEFAULT_OPUS_MODEL = "fireworks/PFW-Kimi-K3"
+ANTHROPIC_DEFAULT_FABLE_MODEL = "fireworks/PFW-Kimi-K2"
+CLAUDE_CODE_SUBAGENT_MODEL = "DeepSeek-V4-Pro"
+CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING = "1"
+CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE = "0"
+DISABLE_TELEMETRY = "1"
+DO_NOT_TRACK = "1"
+CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC = "1"
+ANTHROPIC_DEFAULT_OPUS_MODEL_NAME = "Fireworks Kimi K3"
+ANTHROPIC_DEFAULT_OPUS_MODEL_DESCRIPTION = "Bifrost Fireworks deployment: PFW-Kimi-K3."
+ANTHROPIC_DEFAULT_SONNET_MODEL_NAME = "Fireworks GLM 5.2"
+ANTHROPIC_DEFAULT_SONNET_MODEL_DESCRIPTION = "Bifrost Fireworks deployment: PFW-GLM-5.2."
+ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME = "DeepSeek V4 Pro"
+ANTHROPIC_DEFAULT_HAIKU_MODEL_DESCRIPTION = "Bifrost deployment: DeepSeek-V4-Pro."
+ANTHROPIC_DEFAULT_FABLE_MODEL_NAME = "Fireworks Kimi K2.6"
+ANTHROPIC_DEFAULT_FABLE_MODEL_DESCRIPTION = "Bifrost Fireworks deployment: PFW-Kimi-K2."
+ANTHROPIC_AUTH_TOKEN = "****"
+ANTHROPIC_CUSTOM_HEADERS = """
+Authorization: **** YWRtaW5AcHJvdmFuYS5jb206V0hBSERBYmNhc2JmNjczdGRhI0BsYWRqODI=
+x-bf-vk: ****
+x-api-key: ****"""
+
+[desktop]
+external-agent-import-sync-enabled = true
+conversationDetailMode = "STEPS_COMMANDS"
+ambient-suggestions-enabled = true
+followUpQueueMode = "queue"

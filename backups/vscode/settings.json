@@ -1,0 +1,75 @@
+{
+    "github.copilot.nextEditSuggestions.enabled": true,
+    
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "/.docx.json"
+            ],
+            "url": "https://raw.githubusercontent.com/Mehdi-Verfaillie/docx/main/src/config/.docx.schema.json"
+        }
+    ],
+    "chat.instructionsFilesLocations": {
+        ".github/instructions": true,
+        ".claude/rules": true,
+        "~/.copilot/instructions": true,
+        "~/.claude/rules": true,
+        "C:\\Users\\YETHU~1.KRI\\AppData\\Local\\Temp\\postman-collections-post-response.instructions.md": true,
+        "C:\\Users\\YETHU~1.KRI\\AppData\\Local\\Temp\\postman-collections-pre-request.instructions.md": true,
+        "C:\\Users\\YETHU~1.KRI\\AppData\\Local\\Temp\\postman-folder-post-response.instructions.md": true,
+        "C:\\Users\\YETHU~1.KRI\\AppData\\Local\\Temp\\postman-folder-pre-request.instructions.md": true,
+        "C:\\Users\\YETHU~1.KRI\\AppData\\Local\\Temp\\postman-http-request-post-response.instructions.md": true,
+        "C:\\Users\\YETHU~1.KRI\\AppData\\Local\\Temp\\postman-http-request-pre-request.instructions.md": true
+    },
+    "workbench.colorTheme": "Monokai Hacker",
+    "files.autoSave": "afterDelay",
+    "terminal.integrated.cwd": "${workspaceFolder}",
+    "workbench.iconTheme": "vscode-great-icons",
+    "chat.useAgentSkills": true,
+    "chat.viewSessions.orientation": "stacked",
+    "docker.extension.enableComposeLanguageServer": false,
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.selectedModel": "default",
+    "chat.tools.urls.autoApprove": {
+        "https://code.visualstudio.com": true,
+        "https://github.com/microsoft/vscode/wiki/*": true,
+        "https://kyutai.org/blog/2026-01-13-pocket-tts": true,
+        "https://kyutai.org/blog": true,
+        "https://kyutai.org": true,
+        "https://github.com/kyutai-labs/pocket-tts": true,
+        "https://github.com/kyutai-labs": true,
+        "https://github.com": true,
+        "https://raw.githubusercontent.com/kyutai-labs/pocket-tts/main/README.md": true,
+        "https://raw.githubusercontent.com/kyutai-labs/pocket-tts/main": true,
+        "https://raw.githubusercontent.com/kyutai-labs/pocket-tts": true,
+        "https://raw.githubusercontent.com/kyutai-labs": true,
+        "https://raw.githubusercontent.com": true,
+        "https://*.githubusercontent.com": true,
+        "https://pypi.org/project/pocket-tts": {
+            "approveRequest": true,
+            "approveResponse": false
+        },
+        "https://langfuse.com/docs/observability/sdk/python/instrumentation#trace-id": true,
+        "https://langfuse.com/docs/observability/sdk/python": true,
+        "https://langfuse.com/docs/observability/sdk": true,
+        "https://langfuse.com/docs/observability": true,
+        "https://langfuse.com/docs": true,
+        "https://langfuse.com": true
+    },
+    "conventionalCommits.lineBreak": "\\n",
+    "gitlens.ai.model": "vscode",
+    "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+    "chat.tools.terminal.autoApprove": {
+        "func": true,
+        "&": true,
+        "ForEach-Object": true,
+        "pytest": true,
+        "uv": true,
+        "Test-Path": true
+    },
+    "@azure.argTenant": "",
+    "settingsSync.ignoredSettings": [
+        "chat.sessionSync.enabled"
+    ],
+    "security.workspace.trust.untrustedFiles": "open"
+}

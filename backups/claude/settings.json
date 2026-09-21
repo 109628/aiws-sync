@@ -1,0 +1,91 @@
+{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://provana-bifrost.victoriouspebble-0763ce4e.centralus.azurecontainerapps.io/anthropic",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "claude-sonnet-5",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "Kimi-K2.6",
+    "CLAUDE_CODE_DISABLE_THINKING": "1",
+    "MAX_THINKING_TOKENS": "0",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "FW-GLM-5.2",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "FW-Kimi-K3",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "Kimi-K2.6",
+    "CLAUDE_CODE_DISABLE_ADAPTIVE_THINKING": "1",
+    "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "0",
+    "DISABLE_TELEMETRY": "1",
+    "DO_NOT_TRACK": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "GLM 5.2",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_DESCRIPTION": "Bifrost deployment: FW-GLM-5.2.",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "Azure Claude Sonnet 5",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_DESCRIPTION": "Bifrost Azure deployment: claude-sonnet-5.",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "Kimi K2.6",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL_DESCRIPTION": "Bifrost deployment: Kimi-K2.6.",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "Kimi K3",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL_DESCRIPTION": "Bifrost deployment: FW-Kimi-K3.",
+    "ANTHROPIC_AUTH_TOKEN": "****",
+    "ANTHROPIC_CUSTOM_HEADERS": "Authorization: **** YWRtaW5AcHJvdmFuYS5jb206V0hBSERBYmNhc2JmNjczdGRhI0BsYWRqODI=\nx-bf-vk: ****\nx-api-key: ****"
+  },
+  "permissions": {
+    "deny": [
+      "WebSearch",
+      "WebFetch"
+    ]
+  },
+  "enabledPlugins": {
+    "pyright-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
+  "tui": "fullscreen",
+  "theme": "dark-daltonized",
+  "mcpServers": {
+    "azure_devops": {
+      "type": "stdio",
+      "command": "npx",
+      "__proctl": "provana-ado",
+      "args": [
+        "-y",
+        "@azure-devops/mcp",
+        "provanadev",
+        "-d",
+        "core",
+        "repositories",
+        "work-items",
+        "pipelines"
+      ]
+    },
+    "databricks": {
+      "type": "stdio",
+      "command": "databricks",
+      "__proctl": "provana-data",
+      "args": [
+        "mcp",
+        "start"
+      ]
+    },
+    "databricks-mcp": {
+      "type": "http",
+      "url": "https://adb-7405609401284196.16.azuredatabricks.net/api/2.0/mcp/sql",
+      "headers": {
+        "Authorization": "****"
+      }
+    },
+    "excel": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "--yes",
+        "@negokaz/excel-mcp-server"
+      ],
+      "env": {
+        "EXCEL_MCP_PAGING_CELLS_LIMIT": "4000"
+      }
+    },
+    "drawio": {
+      "type": "stdio",
+      "command": "drawio-mcp",
+      "args": []
+    }
+  },
+  "model": "sonnet"
+}
